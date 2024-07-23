@@ -54,27 +54,6 @@ const Navbar = () => {
             <ul className="menu_list">
               <li>
                 <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `link_man ${isActive ? "link_active" : "link_defaul"}`
-                  }
-                  aria-current="page"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    `link_man ${isActive ? "link_active" : "link_defaul"}`
-                  }
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
                   to="/men"
                   className={({ isActive }) =>
                     `link_man ${isActive ? "link_active" : "link_defaul"}`
@@ -85,7 +64,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/woman"
+                  to="/women"
                   className={({ isActive }) =>
                     `link_man ${isActive ? "link_active" : "link_defaul"}`
                   }
@@ -94,6 +73,16 @@ const Navbar = () => {
                 </NavLink>
               </li>
 
+              <li>
+                <NavLink
+                  to="/accessories"
+                  className={({ isActive }) =>
+                    `link_man ${isActive ? "link_active" : "link_defaul"}`
+                  }
+                >
+                  Accessories
+                </NavLink>
+              </li>
               <li>
                 <NavLink
                   to="/contact"
