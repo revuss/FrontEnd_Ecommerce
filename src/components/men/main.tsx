@@ -1,53 +1,30 @@
 import React from "react";
-import { Button } from "../ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-// import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-} from "../ui/command";
-import { cn } from "@/lib/utils";
-import { CheckIcon } from "lucide-react";
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 const MenSection = () => {
-  const [open, setOpen] = React.useState(false);
-
   return (
-    <div>
-      main
-      <div>
-        <Popover open={open} onOpenChange={setOpen}>
-          <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              role="combobox"
-              aria-expanded={open}
-              className="w-[200px] justify-between"
-            >
-              {/* <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" /> */}
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-[200px] p-0">
-            <Command>
-              <CommandEmpty>No framework found.</CommandEmpty>
-              <CommandGroup>
-                <CommandItem
-                  value="{f}"
-                  // onSelect={(currentValue) => {
-                  //   setValue(currentValue === value ? "" : currentValue);
-                  //   setOpen(false);
-                  // }}
-                >
-                  "sample"
-                  <CheckIcon className={cn("ml-auto h-4 w-4")} />
-                </CommandItem>
-              </CommandGroup>
-            </Command>
-          </PopoverContent>
-        </Popover>
-      </div>
+    <div className="w-full justify-between flex my-10 px-20">
+      <h1 className="text-2xl font-semibold p-2">Men</h1>
+      <Select>
+        <SelectTrigger className="w-[280px]">
+          <SelectValue placeholder="Sort By" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectLabel>Prize</SelectLabel>
+            <SelectItem value="low_to_high">Low to high</SelectItem>
+            <SelectItem value="high_to_low">High to low</SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
     </div>
   );
 };
